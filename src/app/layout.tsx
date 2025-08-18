@@ -32,6 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `console.log('%cHidden Challenge Found!', 'color: #22c55e; font-size: 16px; font-weight: bold;'); console.log('Looking for something interesting? Try visiting /challenge');`
+          }}
+        />
       </body>
     </html>
   );
