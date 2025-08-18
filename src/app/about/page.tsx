@@ -155,11 +155,8 @@ export default function About() {
               welcomes all skill levels. Join us and be part of a community
               that&apos;s shaping the future of technology.
             </p>
-            <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-              <button className="bg-maroon text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon/90 transition-colors w-full sm:w-auto">
-                Join the Club
-              </button>
-              <button className="border-2 border-maroon text-maroon px-8 py-3 rounded-lg font-semibold hover:bg-maroon hover:text-white transition-colors w-full sm:w-auto">
+            <div className="text-center">
+              <button className="border-2 border-maroon text-maroon px-8 py-3 rounded-lg font-semibold hover:bg-maroon hover:text-white transition-colors">
                 Contact Us
               </button>
             </div>

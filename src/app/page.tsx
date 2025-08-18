@@ -1,12 +1,14 @@
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SectionGuard from "./components/SectionGuard";
+import PageOverflow from "./components/PageOverflow";
 import { siteConfig } from "../data/siteConfig";
 import { upcomingEvents } from "../data/events";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      <PageOverflow topColor="#8A0933" bottomColor="#333333" />
       <Navigation currentPage="home" />
 
       <SectionGuard pageKey="home" sectionKey="hero">
@@ -23,14 +25,6 @@ export default function Home() {
             <p className="text-lg md:text-xl text-white/90 mb-12 max-w-4xl mx-auto">
               {siteConfig.description}
             </p>
-            <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-              <button className="bg-white text-maroon px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-full sm:w-auto">
-                Join the Club
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-maroon transition-colors w-full sm:w-auto">
-                View Events
-              </button>
-            </div>
           </div>
         </div>
         </section>
@@ -150,11 +144,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
-            <button className="bg-maroon text-white px-6 py-3 rounded-lg font-semibold hover:bg-maroon/90 transition-colors">
-              View All Events
-            </button>
-          </div>
         </div>
         </section>
       </SectionGuard>
