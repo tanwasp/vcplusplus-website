@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --maroon: #8A0933;
+  --white: #FFFFFF;
+  --gray: #888888;
+  --light-gray: #f5f5f5;
+  --dark-gray: #333333;
+  
+  /* Semantic colors for better maintainability */
+  --text-primary: #1f2937;       /* Dark gray for main text on light bg */
+  --text-secondary: #6b7280;     /* Medium gray for secondary text on light bg */
+  --text-muted: #9ca3af;         /* Light gray for muted text on light bg */
+  --text-on-dark: #f9fafb;       /* Light text for dark backgrounds */
+  --text-on-dark-secondary: rgba(249, 250, 251, 0.8); /* Secondary text on dark */
+  --text-on-dark-muted: rgba(249, 250, 251, 0.6);     /* Muted text on dark */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-maroon: var(--maroon);
+  --color-white: var(--white);
+  --color-gray: var(--gray);
+  --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
+  
+  /* Define semantic text colors for Tailwind */
+  --color-content-primary: var(--text-primary);
+  --color-content-secondary: var(--text-secondary);
+  --color-content-muted: var(--text-muted);
+  --color-content-on-dark: var(--text-on-dark);
+  --color-content-on-dark-secondary: var(--text-on-dark-secondary);
+  --color-content-on-dark-muted: var(--text-on-dark-muted);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
