@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { getEnabledPages } from '../../data/pagesConfig';
 
@@ -24,7 +25,14 @@ export default function Navigation({ currentPage = '' }: NavigationProps) {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link href="/">
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/vcplusplug_logo.png"
+                  alt="VC++ Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
                 <h1 className="text-2xl font-bold">VC++</h1>
               </Link>
             </div>

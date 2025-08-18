@@ -41,7 +41,7 @@ export const siteConfig = {
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/vcpp_club",
+      url: "https://www.instagram.com/vc.plusplus/",
       enabled: true,
       icon: "instagram",
       bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
@@ -89,4 +89,30 @@ export const siteConfig = {
     "Collaborative project development",
     "Career guidance and networking",
   ],
+
+  // Footer configuration
+  footer: {
+    // Quick Links section
+    quickLinks: {
+      enabled: true,
+      title: "Quick Links",
+      links: [
+        { text: "About Us", url: "/about", enabled: true },
+        { text: "Events", url: "/events", enabled: true },
+        { text: "Projects", url: "/projects", enabled: true },
+        { text: "Resources", url: "/resources", enabled: true },
+      ],
+    },
+
+    // Connect section - uses social media links with additional display options
+    connect: {
+      enabled: true,
+      title: "Connect",
+      useFromSocialMedia: true, // Use links from socialMedia array above
+      additionalLinks: [
+        // Add any extra connect links that aren't in socialMedia
+        // Example: { text: "Slack", url: "https://slack.example.com" }
+      ] as Array<{ text: string; url: string }>,
+    },
+  },
 };
