@@ -1,12 +1,37 @@
+'use client';
+
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import SectionGuard from "./components/SectionGuard";
 import { siteConfig } from "../data/siteConfig";
 import { upcomingEvents } from "../data/events";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const [titleValue, setTitleValue] = useState(siteConfig.siteName);
+  const [isFocused, setIsFocused] = useState(false);
+  const router = useRouter();
+
+  const handleTitleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const command = titleValue.toLowerCase().trim();
+      if (command === 'cd challenge' || command === 'cd /challenge') {
+        router.push('/challenge');
+      }
+    }
+  };
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTitleValue(e.target.value);
+  };
   return (
     <div className="min-h-screen bg-background">
+      <div 
+        style={{ display: 'none' }} 
+        data-challenge="Looking for something interesting? Try /challenge"
+        data-hint="For curious developers"
+      ></div>
       <Navigation currentPage="home" />
 
       <SectionGuard pageKey="home" sectionKey="hero">
@@ -14,9 +39,22 @@ export default function Home() {
         <section className="bg-gradient-to-r from-maroon to-maroon/80 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              {siteConfig.siteName}
-            </h1>
+            <input
+              type="text"
+              value={titleValue}
+              onChange={handleTitleChange}
+              onKeyPress={handleTitleKeyPress}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              placeholder="try cd challenge"
+              className={`text-5xl md:text-7xl font-bold mb-6 bg-transparent border-none outline-none text-white text-center w-full placeholder-gray-400/50 selection:bg-white/20 ${
+                isFocused ? 'caret-white animate-pulse' : 'caret-transparent'
+              }`}
+              style={{ 
+                fontFamily: 'inherit',
+                textShadow: 'inherit'
+              }}
+            />
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
               {siteConfig.tagline}
             </p>
