@@ -134,14 +134,7 @@ export const hackathonData = {
     {
       name: "Major League Hacking (MLH)",
       type: "Title Sponsor",
-      logo: "/sponsors/mlh-logo.png",
       description: "Official hackathon organizer and sponsor",
-    },
-    {
-      name: "Google Gemini",
-      type: "Prize Sponsor",
-      logo: "/sponsors/gemini-logo.png",
-      description: "Providing Gemini backpacks and prizes",
     },
   ],
 
@@ -213,13 +206,4 @@ export const hackathonData = {
   ],
 
   // Contact info
-  contact: {
-    email: "vcplusplus.vsa@vassar.edu",
-    organizers: [
-      "Elta Bajrami",
-      "Tanish Pradhan Wong Ah Sui",
-      "Julian Aguilar",
-      "Cormac St John",
-    ],
-  },
 };

@@ -70,21 +70,36 @@ export default function CountdownTimer({
 
   return (
     <div className={`text-center ${className}`}>
-      <h3 className="text-2xl font-bold text-white mb-6">Event Starts In:</h3>
-      <div className="grid grid-cols-4 gap-4 max-w-lg mx-auto">
-        {timeUnits.map((unit, index) => (
-          <div
-            key={unit.label}
-            className="glass rounded-2xl p-4 backdrop-blur-sm"
-          >
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-              {unit.value.toString().padStart(2, "0")}
-            </div>
-            <div className="text-white/80 text-sm font-semibold uppercase tracking-wide">
-              {unit.label}
-            </div>
+      <div className="relative">
+        <div className="bg-gradient-to-br from-white/15 via-maroon/30 to-white/15 backdrop-blur-sm rounded-3xl p-8 border border-white/30 shadow-xl">
+          <div className="mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Event Starts In
+            </h3>
           </div>
-        ))}
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {timeUnits.map((unit) => (
+              <div key={unit.label} className="relative group">
+                <div className="bg-gradient-to-br from-white/25 to-white/10 rounded-2xl p-4 md:p-6 border border-white/40 shadow-lg transform group-hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                  <div className="text-3xl md:text-5xl font-bold text-white mb-2 font-mono">
+                    {unit.value.toString().padStart(2, "0")}
+                  </div>
+                  <div className="text-white/90 text-sm font-semibold uppercase tracking-wide">
+                    {unit.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Simple urgency message */}
+          <div className="mt-8 p-4 bg-white/15 rounded-2xl border border-white/30">
+            <p className="text-lg font-semibold text-white/95">
+              Limited spots available - Register today!
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

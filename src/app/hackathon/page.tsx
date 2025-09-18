@@ -8,7 +8,6 @@ import ParticleBackground from "../components/ParticleBackground";
 import FloatingActionButton from "../components/FloatingActionButton";
 import CountdownTimer from "../components/CountdownTimer";
 import RegistrationStats from "../components/RegistrationStats";
-import SponsorLogo from "../components/SponsorLogo";
 import { hackathonData } from "../../data/hackathonData";
 import { useState } from "react";
 
@@ -81,16 +80,22 @@ export default function HackathonPage() {
                 </p>
               </ScrollAnimation>
 
-              {/* Countdown Timer & Registration Stats */}
+              {/* Countdown Timer */}
               <ScrollAnimation animation="fade-up" delay={500}>
-                <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+                <div className="mb-16">
                   <CountdownTimer />
+                </div>
+              </ScrollAnimation>
+
+              {/* Registration Stats */}
+              <ScrollAnimation animation="fade-up" delay={600}>
+                <div className="mb-12 max-w-md mx-auto">
                   <RegistrationStats />
                 </div>
               </ScrollAnimation>
 
               {/* CTA Buttons */}
-              <ScrollAnimation animation="fade-up" delay={600}>
+              <ScrollAnimation animation="fade-up" delay={700}>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <a
                     href={hackathonData.registrationUrl}
@@ -114,7 +119,7 @@ export default function HackathonPage() {
               </ScrollAnimation>
 
               {/* Key highlights */}
-              <ScrollAnimation animation="fade-up" delay={700}>
+              <ScrollAnimation animation="fade-up" delay={800}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
                   <div className="glass rounded-2xl p-6 text-center">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -411,20 +416,15 @@ export default function HackathonPage() {
 
             {/* Sponsors */}
             <ScrollAnimation animation="fade-up" delay={200}>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="max-w-md mx-auto">
                 {hackathonData.sponsors.map((sponsor, index) => (
                   <div
                     key={index}
                     className="bg-white p-12 rounded-3xl shadow-xl text-center card-hover"
                   >
-                    <SponsorLogo
-                      sponsor={
-                        sponsor.name === "Major League Hacking (MLH)"
-                          ? "mlh"
-                          : "gemini"
-                      }
-                      className="w-24 h-24 mx-auto mb-6"
-                    />
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <span className="text-white font-bold text-2xl">MLH</span>
+                    </div>
                     <h4 className="text-xl font-bold text-content-primary mb-2">
                       {sponsor.name}
                     </h4>
