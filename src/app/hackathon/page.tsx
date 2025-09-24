@@ -206,8 +206,8 @@ export default function HackathonPage() {
                   Why Join Our <span className="gradient-text">Hackathon?</span>
                 </h2>
                 <p className="text-xl text-content-secondary max-w-3xl mx-auto">
-                  More than just a coding competition - it's a celebration of
-                  creativity, learning, and community.
+                  More than just a coding competition - it&apos;s a celebration
+                  of creativity, learning, and community.
                 </p>
               </div>
             </ScrollAnimation>
@@ -490,7 +490,7 @@ export default function HackathonPage() {
                   rel="noopener noreferrer"
                   className="btn-modern bg-white text-maroon px-10 py-4 rounded-full font-bold text-xl hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-2xl"
                 >
-                  Register Now - It's Free!
+                  Register Now - It&apos;s Free!
                 </a>
               </div>
             </ScrollAnimation>

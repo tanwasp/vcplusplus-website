@@ -412,7 +412,7 @@ export default function Home() {
               </div>
               <div className="opacity-0 animate-fade-in-up animate-delay-200">
                 <p className="text-xl text-white/80 max-w-2xl mx-auto">
-                  Don't miss out on our latest activities and networking
+                  Don&apos;t miss out on our latest activities and networking
                   opportunities
                 </p>
               </div>
